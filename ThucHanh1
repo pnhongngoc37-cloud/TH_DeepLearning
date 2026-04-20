@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyM3ATfbWBoiiWGA8CxNYr1Z",
+      "authorship_tag": "ABX9TyOU9Co2CsVY2pn94LzNLmqu",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -561,6 +561,36 @@
       ],
       "metadata": {
         "id": "KI7vBv4n7Q8p"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def bai6():\n",
+        "    print(\"\\n=== Bài 6 ===\")\n",
+        "    # Cách 1: dùng np.identity\n",
+        "    mat1 = np.identity(3, dtype=int)\n",
+        "    print(\"Ma trận đơn vị 3x3 (identity):\\n\", mat1)\n",
+        "    # Cách 2: dùng np.eye\n",
+        "    mat2 = np.eye(3, dtype=int)\n",
+        "    print(\"Ma trận đơn vị 3x3 (eye):\\n\", mat2)\n",
+        "    return mat1\n",
+        "if __name__ == \"__main__\":\n",
+        "    bai6()"
+      ],
+      "metadata": {
+        "id": "TEJQtMy18gcB"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "Dp7wdhex8qZB"
       },
       "execution_count": null,
       "outputs": []

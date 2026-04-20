@@ -1,0 +1,599 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOU9Co2CsVY2pn94LzNLmqu",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/pnhongngoc37-cloud/TH_DeepLearning/blob/main/Numpy_Pandas\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "Ct9-RJsEauom"
+      },
+      "outputs": [],
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "#cách 1\n",
+        "# tao list\n",
+        "my_list = [1, 9, 15, 39]\n",
+        "print('Python list:', my_list)\n",
+        "\n",
+        "#chuyển list --> Numpy array\n",
+        "my_numpy_array = np.array(my_list)\n",
+        "print('Numpy array:', my_numpy_array)\n",
+        "\n",
+        "#cách 2\n",
+        "a = np.array([1, 9, 15, 39])\n",
+        "print(a)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "c= np.array([[1, 2, 3], [4, 5, 6]])\n",
+        "print(c)\n",
+        "print(c.shape)\n",
+        "print(c.dtype)"
+      ],
+      "metadata": {
+        "id": "beKYjoloc9kh"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "d = np.array([\n",
+        "    [[1., 2., 3.], [4., 5., 6.]],\n",
+        "    [[7., 8., 9.], [10, 11, 12]]\n",
+        "])\n",
+        "\n",
+        "print(d)\n",
+        "print(d.shape)"
+      ],
+      "metadata": {
+        "id": "x_uAcao1d8R5"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "e = np.zeros((2, 2))\n",
+        "f = np.ones((3, 3))\n",
+        "print('Zero matrix:\\n', e)\n",
+        "print('One matrix\\n', f)"
+      ],
+      "metadata": {
+        "id": "LwZnsX0OetqR"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "e = np.array([[1., 2., 3.], [4., 5., 6.]])\n",
+        "print(e)\n",
+        "print(e.shape)\n",
+        "f = e.reshape(3,2)\n",
+        "print(f)\n",
+        "g = np.array([[[1., 2., 3.], [4., 5., 6.]],\n",
+        "    [[7., 8., 9.], [10., 11., 12.]]])\n",
+        "print(g)\n",
+        "print(g.shape)\n",
+        "h = g.reshape(3,4)\n",
+        "print('reshape (3, 4)\\n', h)\n",
+        "j = g.reshape(3, 2, 2)\n",
+        "print('reshape (3, 2, 2)\\n', j)\n",
+        "k = g.reshape(2, 3, 2)\n",
+        "print('reshape (2, 3, 2)\\n', k)"
+      ],
+      "metadata": {
+        "id": "4Vscc1agfHN5"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "e = np.array([[1., 2., 3.], [4., 5., 6.]])\n",
+        "f = e.flatten()\n",
+        "print(f)\n",
+        "g = np.array([[[1., 2., 3.], [4., 5., 6.]],\n",
+        "    [[7., 8., 9.], [10., 11., 12.]]])\n",
+        "j = g.flatten()\n",
+        "print(j)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Js60rxGsiRBS",
+        "outputId": "3035ed20-16cf-4ea8-e3dc-d2f07a4da9e3"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1. 2. 3. 4. 5. 6.]\n",
+            "[ 1.  2.  3.  4.  5.  6.  7.  8.  9. 10. 11. 12.]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "f = np.array([1., 2., 3.])\n",
+        "g = np.array([4., 5., 6.])\n",
+        "\n",
+        "h_stack = np.hstack((f, g))\n",
+        "print('Horizontal Append\\n', h_stack)\n",
+        "v_stack = np.vstack((f, g))\n",
+        "print('Vertical Append\\n', v_stack)"
+      ],
+      "metadata": {
+        "id": "mx5VRhFxiudy"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = np.random.randint(100,size=(5,))\n",
+        "print('Random 1-D array\\n',a)\n",
+        "b = np.random.randint(100,size=(3,4))\n",
+        "print('Random 2-D array\\n',b)\n",
+        "c = np.random.randint(100,size=(3,4,3))\n",
+        "print('Random 3-D array\\n',c)"
+      ],
+      "metadata": {
+        "id": "A9T8z4K6i7-B"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#sinh ngẫu nhiên mảng số thực [0, 1]\n",
+        "a = np.random.rand(5)\n",
+        "print('Random 1-D array\\n',a)\n",
+        "b = np.random.rand(3, 4)\n",
+        "print('Random 2-D array\\n',b)\n",
+        "c = np.random.rand(3, 4, 3)\n",
+        "print('Random 3-D array\\n',c)"
+      ],
+      "metadata": {
+        "id": "twAwBIuUn8Tp"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Sinh mảng số ngẫu nhiên theo phân phối chuẩn Gaussian\n",
+        "a = np.random.normal(5, 0.5, 10)\n",
+        "print(a)"
+      ],
+      "metadata": {
+        "id": "ZYSkLJvsonQS"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#sinh 1 giá trị ngẫu nhiên từ mảng giá trị cho trước\n",
+        "a = np.random.choice([2, 4, 6, 8, 10, 12, 14, 16, 18, 20])\n",
+        "print(a)\n",
+        "\n",
+        "#sinh ma trận 3 x 5 ngẫu nhiên từ mảng giá trị cho trước\n",
+        "b = np.random.choice([2, 4, 6, 8, 10, 12, 14, 16, 18, 20], size=(3, 5))\n",
+        "print(b)"
+      ],
+      "metadata": {
+        "id": "gyPQxLMisnJJ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Tạo ma trận 5 x 5 với số 1\n",
+        "A = np.matrix(np.ones((5, 5)))\n",
+        "print('The matrix\\n', A)\n",
+        "np.array(A)[2] = 2\n",
+        "print('Chuyen ma tran thanh array\\n', A)\n",
+        "np.asarray(A)[2] = 2\n",
+        "print('Doi 1 dong trong ma tran\\n', A)"
+      ],
+      "metadata": {
+        "id": "PQ5kJflQwReJ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#tạo 20 số nguyên từ 1 --> (n-1)\n",
+        "a = np.arange(1, 20)\n",
+        "print(a)\n",
+        "\n",
+        "#tạo 20 số nguyên từ 1 --> (n-1), mỗi bước tăng 2 giá trị\n",
+        "b = np.arange(1, 20, 2)\n",
+        "print(b)"
+      ],
+      "metadata": {
+        "id": "3hzQUf0Sw2Lp"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Tạo cac số cách đều nhau\n",
+        "a= np.linspace(1.,5.,num=10)\n",
+        "print(a)"
+      ],
+      "metadata": {
+        "id": "Sbluw8JZydmC"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#slice\n",
+        "a = np.array([(1, 2, 3), (4, 5, 6)])\n",
+        "print(a)\n",
+        "print('first row:', a[0])\n",
+        "print('second row:', a[1])\n",
+        "\n",
+        "#indexing\n",
+        "print('Second column:', a[:,1])\n",
+        "print('first column', a[:, 0])\n",
+        "print('First two values of second row:', a[1, :2])"
+      ],
+      "metadata": {
+        "id": "Qi3cDs7gzqR5"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "#Tạo pandas series từ list\n",
+        "a = pd.Series([1., 2., 3.])\n",
+        "print(a)\n",
+        "print('First value:', a[0])\n",
+        "b = pd.Series([1., 2., 3.], index=['a', 'b', 'c'])\n",
+        "print(b)\n",
+        "print('First value:', b['a'])\n",
+        "#Tạo pandas series từ dictionary\n",
+        "calories = {\"day1\": 420, \"day2\": 380, \"day3\": 390}\n",
+        "myvar = pd.Series(calories)\n",
+        "print(myvar)"
+      ],
+      "metadata": {
+        "id": "Zrv83rjK1F5J"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Numpy  --> Pandas\n",
+        "h = np.array([[1, 2], [3, 4]])\n",
+        "df_h = pd.DataFrame(h)\n",
+        "print('DataFrame:\\n', df_h)\n",
+        "\n",
+        "#Pandas  --> Numpy\n",
+        "numpy_h = np.array(df_h)\n",
+        "print('Numpy array:\\n', numpy_h)"
+      ],
+      "metadata": {
+        "id": "hRyhSy9B1rcZ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "dic = {'Name':['John', 'Smith'], 'Age':[30, 40]}\n",
+        "df_dic = pd.DataFrame(dic)\n",
+        "print(df_dic)"
+      ],
+      "metadata": {
+        "id": "baTDWTOs16pw"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#tạo mảng 20 x 4\n",
+        "r = np.random.randn(20, 4)\n",
+        "df = pd.DataFrame(r, columns=['s01', 's02', 's03', 's04'])\n",
+        "print(df.head())    #in 5 dòng đầu tiên"
+      ],
+      "metadata": {
+        "id": "eKXiPeCe2pph"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#tạo mảng 20 x 4\n",
+        "r = np.random.randn(20, 4)\n",
+        "df = pd.DataFrame(r, columns=['so1', 'so2', 'so3', 'so4'])\n",
+        "print(df.head())    #in 5 dòng đầu tiên\n",
+        "#chọn 1 cột\n",
+        "print('Chọn cột so1\\n', df['so1'])\n",
+        "#chọn nhiều dòng\n",
+        "print('Chọn nhiều dòng\\n', df[0:3])\n",
+        "#chọn nhiều cột\n",
+        "print('Chọn nhiều cột\\n', df[['so1', 'so3']])\n",
+        "#chọn nhiều dòng, nhiều cột\n",
+        "print('Chọn nhiều dòng, nhiều cột\\n', df.iloc[:3, :2])\n",
+        "#Xóa cột\n",
+        "df = df.drop(columns=['so1', 'so4'])\n",
+        "print(df)"
+      ],
+      "metadata": {
+        "id": "buuR5LYO2uN5"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Nối 2 DataFrame\n",
+        "df1 = pd.DataFrame({'Name':['John', 'Smith', 'Paul'],\n",
+        "    'Age':[25, 30, 50],\n",
+        "    }, index=[0, 1, 2])\n",
+        "df2 = pd.DataFrame({'Name':['Adam', 'Smith'],\n",
+        "    'Age':[26, 11]\n",
+        "    }, index=[3, 4])\n",
+        "df_concat = pd.concat([df1, df2])\n",
+        "print('Concate two DataFrame\\n', df_concat)\n",
+        "#Xóa những giá trị ở cột Name trùng nhau\n",
+        "print('Drop duplicate values in DataFrame\\n', df_concat.drop_duplicates('Name'))\n",
+        "#Sắp xếp theo cột\n",
+        "print('Sort values in DataFrame\\n', df_concat.sort_values('Age'))\n",
+        "#Đổi tên cột\n",
+        "df_rename = df_concat.rename(columns={'Name':'Surname', 'Age':'Age_pupil'})\n",
+        "print('Rename columns of DataFrame\\n', df_rename)"
+      ],
+      "metadata": {
+        "id": "zprD8OnQ3KIB"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Đọc dữ liệu từ CSV\n",
+        "path = '/content/sample_data/Salary_Data.csv'\n",
+        "COLUMNS = ['YearsExperience', 'Salary']\n",
+        "df_csv = pd.read_csv(path, skipinitialspace=True, names=COLUMNS, index_col=False)\n",
+        "print(df_csv.head())\n",
+        "print(df_csv.shape)\n",
+        "df_csv1 = pd.read_csv(path, skipinitialspace=True, index_col=False)\n",
+        "print(df_csv1.head())\n",
+        "print(df_csv1.shape)"
+      ],
+      "metadata": {
+        "id": "sYH0O4eG3QNx"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Gom nhóm dữ liệu trong DataFrame\n",
+        "path = '/content/sample_data/Fish.csv'\n",
+        "df_csv = pd.read_csv(path, skipinitialspace=True, index_col=False)\n",
+        "print(df_csv.head())\n",
+        "print(df_csv.groupby(['Species']).mean().head())\n",
+        "print(df_csv.groupby(['Species'])['Weight'].min().head())\n",
+        "print(df_csv.groupby(['Species', 'Height'])['Weight'].min().head())"
+      ],
+      "metadata": {
+        "id": "lbPCs_bF4nRS"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "def bai1():\n",
+        "    print(\"=== Bài 1 ===\")\n",
+        "    arr = np.random.randint(0, 21, size=(3, 3))\n",
+        "    print(\"Mảng tạo được:\\n\", arr)\n",
+        "    # Kiểm tra tất cả phần tử khác 0\n",
+        "    result = np.all(arr != 0)\n",
+        "    print(\"Tất cả các phần tử khác 0?\", result)\n",
+        "    return arr\n",
+        "\n",
+        "if __name__ == \"__main__\":\n",
+        "    bai1()"
+      ],
+      "metadata": {
+        "id": "DAMH-VYP5Kip"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def bai2():\n",
+        "    print(\"\\n=== Bài 2 ===\")\n",
+        "    arr = np.random.randint(0, 21, size=(3, 3))\n",
+        "    print(\"Mảng tạo được:\\n\", arr)\n",
+        "    # Kiểm tra có ít nhất một phần tử khác 0 không\n",
+        "    result = np.any(arr != 0)\n",
+        "    print(\"Có ít nhất một phần tử khác 0?\", result)\n",
+        "    return arr\n",
+        "if __name__ == \"__main__\":\n",
+        "    bai2()"
+      ],
+      "metadata": {
+        "id": "v5nigRWw6VWq"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def bai3():\n",
+        "    print(\"\\n=== Bài 3 ===\")\n",
+        "    # Mảng 1 chiều\n",
+        "    a1 = np.array([1, 2, 3, 4])\n",
+        "    b1 = np.array([2, 2, 2, 5])\n",
+        "    print(\"Mảng 1D a1:\", a1)\n",
+        "    print(\"Mảng 1D b1:\", b1)\n",
+        "    print(\"a1 > b1 (greater):\", np.greater(a1, b1))\n",
+        "    print(\"a1 >= b1 (greater_equal):\", np.greater_equal(a1, b1))\n",
+        "    print(\"a1 < b1 (less):\", np.less(a1, b1))\n",
+        "    print(\"a1 <= b1 (less_equal):\", np.less_equal(a1, b1))\n",
+        "\n",
+        "    # Mảng 2 chiều\n",
+        "    a2 = np.array([[1, 3], [5, 7]])\n",
+        "    b2 = np.array([[2, 2], [6, 6]])\n",
+        "    print(\"\\nMảng 2D a2:\\n\", a2)\n",
+        "    print(\"Mảng 2D b2:\\n\", b2)\n",
+        "    print(\"a2 > b2 (greater):\\n\", np.greater(a2, b2))\n",
+        "    print(\"a2 >= b2 (greater_equal):\\n\", np.greater_equal(a2, b2))\n",
+        "    print(\"a2 < b2 (less):\\n\", np.less(a2, b2))\n",
+        "    print(\"a2 <= b2 (less_equal):\\n\", np.less_equal(a2, b2))\n",
+        "if __name__ == \"__main__\":\n",
+        "    bai3()"
+      ],
+      "metadata": {
+        "id": "3I6GSFDV6j9R"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def bai4():\n",
+        "    print(\"\\n=== Bài 4 ===\")\n",
+        "    arr = np.array([1]*10 + [0]*10 + [5]*10)\n",
+        "    print(\"Mảng gồm 10 số 1, 10 số 0, 10 số 5:\\n\", arr)\n",
+        "    print(\"Độ dài mảng:\", len(arr))\n",
+        "    return arr\n",
+        "if __name__ == \"__main__\":\n",
+        "    bai4()"
+      ],
+      "metadata": {
+        "id": "mEUv6WjP60WJ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def bai5():\n",
+        "    print(\"\\n=== Bài 5 ===\")\n",
+        "    # Cách 1: dùng arange với step=2\n",
+        "    arr = np.arange(30, 71, 2)\n",
+        "    print(\"Các số chẵn từ 30 đến 70:\\n\", arr)\n",
+        "    return arr\n",
+        "if __name__ == \"__main__\":\n",
+        "    bai5()"
+      ],
+      "metadata": {
+        "id": "KI7vBv4n7Q8p"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def bai6():\n",
+        "    print(\"\\n=== Bài 6 ===\")\n",
+        "    # Cách 1: dùng np.identity\n",
+        "    mat1 = np.identity(3, dtype=int)\n",
+        "    print(\"Ma trận đơn vị 3x3 (identity):\\n\", mat1)\n",
+        "    # Cách 2: dùng np.eye\n",
+        "    mat2 = np.eye(3, dtype=int)\n",
+        "    print(\"Ma trận đơn vị 3x3 (eye):\\n\", mat2)\n",
+        "    return mat1\n",
+        "if __name__ == \"__main__\":\n",
+        "    bai6()"
+      ],
+      "metadata": {
+        "id": "TEJQtMy18gcB"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "Dp7wdhex8qZB"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
